@@ -1,0 +1,7 @@
+ropencc is built upon several other projects, and part of the code is copied
+or derived from these projects.
+
+* [OpenCC](https://github.com/BYVoid/OpenCC) Apache License 2.0
+* [darts-clone](https://code.google.com/p/darts-clone/) BSD License
+* [tclap](http://tclap.sourceforge.net/) MIT License
+* [rapidjson](https://github.com/miloyip/rapidjson) MIT License

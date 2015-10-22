@@ -1,0 +1,2 @@
+CXX_STD = CXX11
+PKG_CPPFLAGS = -DOpencc_BUILT_AS_STATIC -I../inst/include -I../inst/include/rapidjson -I../inst/include/tclap
