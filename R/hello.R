@@ -27,6 +27,10 @@
 #' @param type T2S S2T S2TW HK2S S2HK S2TWP T2HK T2S T2TW TW2S TW2SP
 #' @export
 converter <- function(type=ropencc::S2T) {
+    ropenccpath <- find.package("ropencc")
+    if(!file.exists(file.path(ropenccpath,"config","S2T.json"))){
+        try(unzip(file.path(ropenccpath,"config","config.zip"),exdir  = file.path( ropenccpath,"config") ) )
+    }
     if(file.exists(type)){
         res = converter_create(type)
         class(res) = "cc_converter"
