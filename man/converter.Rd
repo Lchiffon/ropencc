@@ -7,14 +7,14 @@
 converter(type = ropencc::S2T)
 }
 \arguments{
-\item{type}{T2S S2T}
+\item{type}{T2S S2T S2TW HK2S S2HK S2TWP T2HK T2S T2TW TW2S TW2SP}
 }
 \description{
 create a converter. S2T means Simplified Chinese to Traditional Chinese. T2S means Traditional Chinese to Simplified Chinese.
 }
 \examples{
 \dontrun{
-cc = converter()
+cc = converter(S2T)
 }
 }
 

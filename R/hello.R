@@ -21,10 +21,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' cc = converter()
+#' cc = converter(S2T)
 #' }
 #'
-#' @param type T2S S2T
+#' @param type T2S S2T S2TW HK2S S2HK S2TWP T2HK T2S T2TW TW2S TW2SP
 #' @export
 converter <- function(type=ropencc::S2T) {
     if(file.exists(type)){
@@ -43,6 +43,7 @@ converter <- function(type=ropencc::S2T) {
 #' @examples
 #' \dontrun{
 #' cc = converter()
+#' cc["TEXT"]
 #' }
 #' @param worker opencc worker
 #' @param text input text

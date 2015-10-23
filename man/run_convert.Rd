@@ -24,6 +24,7 @@ run converter
 \examples{
 \dontrun{
 cc = converter()
+cc["TEXT"]
 }
 }
 
