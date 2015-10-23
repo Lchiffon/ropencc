@@ -3,9 +3,9 @@
 # See the r-travis repo and its wiki
 #   https://github.com/craigcitro/r-travis/wiki
 #   https://github.com/eddelbuettel/r-travis/
-sudo: required
+osx_image: xcode61
 
-language: c
+language: objective-c
 
 env:
   global:
@@ -17,7 +17,7 @@ env:
 
 before_install:
   - echo "options(repos = c(CRAN='http://cran.r-project.org'))" >> ~/.Rprofile
-  - curl -OL http://raw.github.com/qinwf/r-travis/master/scripts/travis-tool.sh
+  - curl -OL http://raw.github.com/wertion/r-travis-mac/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
 
