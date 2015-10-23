@@ -1,8 +1,9 @@
 # Sample .travis.yml for R projects.
 #
-# See the r-travis repo and its wiki 
+# See the r-travis repo and its wiki
 #   https://github.com/craigcitro/r-travis/wiki
 #   https://github.com/eddelbuettel/r-travis/
+sudo: required
 
 language: c
 
@@ -23,7 +24,7 @@ before_install:
 install:
   - ./travis-tool.sh install_deps
 
-script: 
+script:
   - ./travis-tool.sh run_tests
 
 after_failure:
