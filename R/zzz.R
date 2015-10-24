@@ -59,7 +59,7 @@ TIMESTAMP<-NULL
     assign(x = "S2T", file.path(find.package("ropencc"),"config","s2t.json"),asNamespace('ropencc'))
     assign(x = "HK2S", file.path(find.package("ropencc"),"config","hk2s.json"),asNamespace('ropencc'))
     assign(x = "S2HK", file.path(find.package("ropencc"),"config","s2hk.json"),asNamespace('ropencc'))
-    assign(x = "S2TW",  file.path(find.package("ropencc"),"config","s2tw,json"),asNamespace('ropencc'))
+    assign(x = "S2TW",  file.path(find.package("ropencc"),"config","s2tw.json"),asNamespace('ropencc'))
     assign(x = "S2TWP",  file.path(find.package("ropencc"),"config","s2twp.json"),asNamespace('ropencc'))
     assign(x = "T2HK",  file.path(find.package("ropencc"),"config","t2hk.json"),asNamespace('ropencc'))
     assign(x = "T2S",  file.path(find.package("ropencc"),"config","t2s.json"),asNamespace('ropencc'))
