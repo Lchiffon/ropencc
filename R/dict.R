@@ -15,6 +15,6 @@ make_dict <- function(input=NULL,output=NULL,from_format="text",to_format="ocd")
         warning("Thers is a file in the output path.")
     }
     stopifnot(from_format %in% c("text","ocd") && to_format %in%  c("text","ocd") )
-    ropencc:::convert_dict(input,output,from_format,to_format)
+    convert_dict(input,output,from_format,to_format)
     return(output)
 }
