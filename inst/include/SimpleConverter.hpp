@@ -24,6 +24,7 @@
 *
 * Simple API in C++ language
 */
+#include "Common.hpp"
 
 namespace opencc {
 /**
@@ -31,13 +32,13 @@ namespace opencc {
 * This interface does not require C++11 to compile.
 * @ingroup opencc_simple_api
 */
-class OPENCC_EXPORT SimpleConverter {
+class  SimpleConverter {
 public:
   /**
   * Constructor of SimpleConverter
   * @param configFileName File name of configuration.
   */
-  SimpleConverter(const std::string& configFileName);
+  SimpleConverter(const string& configFileName);
 
   ~SimpleConverter();
 
@@ -45,7 +46,7 @@ public:
   * Converts a text
   * @param input Text to be converted.
   */
-  std::string Convert(const std::string& input) const;
+  std::string Convert(const string& input) const;
 
   /**
   * Converts a text

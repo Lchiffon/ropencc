@@ -4,8 +4,15 @@ Linux : [![Build Status](https://travis-ci.org/qinwf/ropencc.svg?branch=master)]
 
 ```r
 devtools::install_github("qinwf/ropencc")
-ccst = converter(S2T)
-ccst["开放中文转换"]
-ccts = converter(T2S)
-ccts["開放中文轉換"]
+
+converter(S2T)["开放中文转换"]
+converter(S2TW)["一条信息"]
+converter(S2TWP)["一条信息"]
+converter(S2HK)["一条信息"]
+converter(T2S)["開放中文轉換"]
+converter(T2HK)["開放中文轉換"]
+converter(T2TW)["開放中文轉換"]
+converter(TW2S)["開放中文轉換"]
+converter(TW2SP)["一條資訊"]
+converter(HK2S)["開放中文轉換"]
 ```

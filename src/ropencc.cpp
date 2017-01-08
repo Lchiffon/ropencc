@@ -15,10 +15,9 @@ using namespace opencc;
 // ConverterPtr converter;
 
 // [[Rcpp::export]]
-XPtr<ConverterPtr> converter_create(CharacterVector file_){
-    Config config;
+XPtr<SimpleConverter> converter_create(CharacterVector file_){
     string configFileName = as<string>(file_[0]);
-    return XPtr<ConverterPtr>(new ConverterPtr(config.NewFromFile(configFileName)));
+    return XPtr<SimpleConverter>(new SimpleConverter(configFileName));
 }
 
 using opencc::Exception;
@@ -81,7 +80,7 @@ List extract(XPtr<PhraseExtract> extractor,CharacterVector input_){
 }
 
 // [[Rcpp::export]]
-CharacterVector convert(XPtr<ConverterPtr> ptr, CharacterVector input_){
+CharacterVector convert(XPtr<SimpleConverter> ptr, CharacterVector input_){
 
     CharacterVector::iterator begin=input_.begin();
     CharacterVector::iterator end = input_.end();
@@ -90,7 +89,7 @@ CharacterVector convert(XPtr<ConverterPtr> ptr, CharacterVector input_){
     res.reserve(input_.size());
 
     for(CharacterVector::iterator it=begin;it!=end;it++){
-        res.push_back((*ptr)->Convert(as<string>(*it)));
+        res.push_back(ptr->Convert(as<string>(*it)));
     }
 
     return wrap(res);
