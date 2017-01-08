@@ -15,4 +15,7 @@ converter(T2TW)["開放中文轉換"]
 converter(TW2S)["開放中文轉換"]
 converter(TW2SP)["一條資訊"]
 converter(HK2S)["開放中文轉換"]
+
+cc = converter(HK2S)
+run_convert(cc, "開放中文轉換")
 ```
