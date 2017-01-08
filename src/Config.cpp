@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+#include <unordered_map>
+
 #include "Config.hpp"
 #include "ConversionChain.hpp"
 #include "Converter.hpp"
@@ -25,8 +27,6 @@
 #include "TextDict.hpp"
 
 #include "document.h"
-
-#include <unordered_map>
 
 using namespace opencc;
 
@@ -94,7 +94,7 @@ public:
   DictPtr ParseDict(const JSONValue& doc) {
     // Required: type
     string type = GetStringProperty(doc, "type");
-    DictPtr dict;
+
     if (type == "group") {
       list<DictPtr> dicts;
       const JSONValue& docs = GetArrayProperty(doc, "dicts");
@@ -114,6 +114,7 @@ public:
       if (cache != nullptr) {
         return cache;
       }
+      DictPtr dict;
       if (type == "text") {
         dict = LoadDictWithPaths<TextDict>(fileName);
       } else if (type == "ocd") {
@@ -168,19 +169,19 @@ public:
     std::ifstream ifs;
 
     // Working directory
-    ifs.open(fileName.c_str());
+    ifs.open(UTF8Util::GetPlatformString(fileName).c_str());
     if (ifs.is_open()) {
       return fileName;
     }
     // Package data directory
     if (PACKAGE_DATA_DIRECTORY != "") {
       string prefixedFileName = PACKAGE_DATA_DIRECTORY + fileName;
-      ifs.open(prefixedFileName.c_str());
+      ifs.open(UTF8Util::GetPlatformString(prefixedFileName).c_str());
       if (ifs.is_open()) {
         return prefixedFileName;
       }
       prefixedFileName += ".json";
-      ifs.open(prefixedFileName.c_str());
+      ifs.open(UTF8Util::GetPlatformString(prefixedFileName).c_str());
       if (ifs.is_open()) {
         return prefixedFileName;
       }
@@ -197,7 +198,7 @@ Config::~Config() { delete (ConfigInternal*)internal; }
 ConverterPtr Config::NewFromFile(const string& fileName) {
   ConfigInternal* impl = (ConfigInternal*)internal;
   string prefixedFileName = impl->FindConfigFile(fileName);
-  std::ifstream ifs(prefixedFileName);
+  std::ifstream ifs(UTF8Util::GetPlatformString(prefixedFileName));
   string content(std::istreambuf_iterator<char>(ifs),
                  (std::istreambuf_iterator<char>()));
 
