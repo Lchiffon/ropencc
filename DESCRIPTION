@@ -5,10 +5,13 @@ Version: 0.1
 Date: 2015-10-22
 Author: Qin Wenfeng and the authors of OpenCC project.
 Maintainer: Qin Wenfeng <mail@qinwenfeng.com>
-Description:  Open Chinese Convert (OpenCC) is an opensource project for conversion between Traditional Chinese and Simplified Chinese, supporting character-level conversion, phrase-level conversion, variant conversion and regional idioms among Mainland China, Taiwan and Hong kong.
+Description: Open Chinese Convert (OpenCC) is an opensource project for
+    conversion between Traditional Chinese and Simplified Chinese, supporting
+    character-level conversion, phrase-level conversion, variant conversion and
+    regional idioms among Mainland China, Taiwan and Hong kong.
 License: Apache License 2.0
 LazyData: TRUE
 Imports:
     Rcpp (>= 0.12.1)
-LinkingTo:
-    Rcpp
+LinkingTo: Rcpp
+RoxygenNote: 5.0.1
